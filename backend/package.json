@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend (Nide)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rohit Kumar, Himanshu Kumar Singh, Manish Prajapati",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

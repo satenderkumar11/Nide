@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
 
-app.use
+const newslist = require('./news.json');
+
+app.get('/news', (req, res)=>{
+  res.send(JSON.stringify(newslist));
+})
 
 const PORT = 8080;
 app.listen(PORT, () => {
@@ -9,4 +13,3 @@ app.listen(PORT, () => {
 });
 
 
-//hello world

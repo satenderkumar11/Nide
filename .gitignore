@@ -1,4 +1,4 @@
 public/node_modules
 public/dist 
-public/.parcel-packages
+public/.parcel-cache
 .DS_store

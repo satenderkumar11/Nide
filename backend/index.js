@@ -1,13 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 
-const newslist = require('./news.json');
+const newsRouter = require('./routes/News');
 
-app.get('/news', (req, res)=>{
-  res.send(JSON.stringify(newslist));
-})
 
+app.use(express.json()); 
+app.use('/', newsRouter.router);
 
 
 
@@ -15,7 +15,7 @@ const PORT = 8080;
 
 
 
-const mongoose = require('mongoose');
+
 
 const connectDB = async () => {
 	try{

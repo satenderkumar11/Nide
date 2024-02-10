@@ -1,2 +1,4 @@
-node_modules
-dist 
+public/node_modules
+public/dist 
+public/.parcel-packages
+.DS_store

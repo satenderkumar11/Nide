@@ -1,6 +1,6 @@
 const {NewsModel} = require('../model/News');
 
-exports.fetchNews = async (req, res) => {
+exports.fetchAllNews = async (req, res) => {
    
     try {
       const docs = await NewsModel.find();

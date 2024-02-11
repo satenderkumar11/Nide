@@ -7,7 +7,7 @@ const newsRouter = require('./routes/News');
 
 
 app.use(express.json()); 
-app.use('/', newsRouter.router);
+app.use('/news', newsRouter.router);
 
 
 
@@ -28,6 +28,9 @@ const connectDB = async () => {
 
 connectDB();
 
+app.get('/', (req, res)=>{
+	res.send('Server');
+})
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

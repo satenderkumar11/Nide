@@ -3,7 +3,7 @@ import Heading from "./components/Heading";
 import { Home } from "./components/Home";
 import { createBrowserRouter , Outlet, RouterProvider} from "react-router-dom";
 import AboutUs from "./components/AboutUs";
-import Jobs from "./components/Jobs";
+import Careers from "./components/Careers";
 import Products from "./components/Products";
 import ContactUs from "./components/ContactUs";
 import Login from "./components/Login";
@@ -12,11 +12,11 @@ import { Footer } from "./components/Footer";
 
 const AppLayout = () => {
     return (
-        <>
+        <div className="flex flex-col min-h-screen">
         <NavBar/>
         < Outlet/>
-        {/* <Footer/> */}
-        </>
+        <Footer />
+        </div>
     );
 };
 
@@ -38,8 +38,8 @@ const appRouter = createBrowserRouter([
                 element: <AboutUs/>
             },
             {
-                path: '/jobs',
-                element: <Jobs/>
+                path: '/Careers',
+                element: <Careers/>
             },
             {
                 path: '/products',

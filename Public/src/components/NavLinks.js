@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-const link_names = [{name: "Home", path:'/home'}, {name : "Products", path: '/products'}, {name: "About Us", path: '/about'}, {name: "Contact us", path: '/contact'}, {name: "Jobs", path: '/jobs'}];
+const link_names = [{name: "Home", path:'/home'}, {name : "Products", path: '/products'}, {name: "About Us", path: '/about'}, {name: "Contact us", path: '/contact'}, {name: "Careers", path: '/Careers'}];
 const NavLinks = () => {
 
   return (

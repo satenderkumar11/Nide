@@ -15,7 +15,7 @@ const AppLayout = () => {
         <>
         <NavBar/>
         < Outlet/>
-        <Footer/>
+        {/* <Footer/> */}
         </>
     );
 };

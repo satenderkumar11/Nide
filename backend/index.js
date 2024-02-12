@@ -15,9 +15,6 @@ app.use(cors());
 const PORT = 8080;
 
 
-
-
-
 const connectDB = async () => {
 	try{
 		const conn = await mongoose.connect(process.env.MONGODB_URL);

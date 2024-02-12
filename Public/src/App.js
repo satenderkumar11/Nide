@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client"
 import Heading from "./components/Heading";
-import { Home } from "./components/Home";
+import Home from "./components/Home";
 import { createBrowserRouter , Outlet, RouterProvider} from "react-router-dom";
 import AboutUs from "./components/AboutUs";
 import Careers from "./components/Careers";
@@ -8,14 +8,14 @@ import Products from "./components/Products";
 import ContactUs from "./components/ContactUs";
 import Login from "./components/Login";
 import NavBar from "./components/NavBar";
-import { Footer } from "./components/Footer";
+import Footer from "./components/Footer";
 
 const AppLayout = () => {
     return (
         <div className="flex flex-col min-h-screen">
-        <NavBar/>
-        < Outlet/>
-        <Footer />
+            <NavBar/>
+            < Outlet/>
+            <Footer />
         </div>
     );
 };

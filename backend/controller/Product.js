@@ -13,8 +13,11 @@ exports.fetchAllProducts = async( req, res ) => {
 };
 
 exports.createProduct = async( req, res ) => {
+
+    const newProduct = new ProductModel(req.body);
+
     try {
-        const product = new ProductModel(req.body);
+        const product = await newProduct.save();
         res.status(200).json(product);
     } catch ( err ) {
         res.status(400).json(err);

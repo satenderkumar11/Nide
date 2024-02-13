@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors'); 
 const app = express();
 
 const newsRouter = require('./routes/News');
@@ -9,13 +10,14 @@ const productRouter = require('./routes/Product');
 
 app.use(express.json()); 
 app.use('/news', newsRouter.router);
+
 app.use('/product', productRouter.router);
 
 
+app.use(cors());
+
+
 const PORT = 8080;
-
-
-
 
 
 const connectDB = async () => {

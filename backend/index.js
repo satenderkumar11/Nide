@@ -10,7 +10,6 @@ const productRouter = require('./routes/Product');
 
 app.use(express.json()); 
 // Middleware
-app.use(bodyParser.json());
 const authRoutes = require('./routes/AuthRoutes');
 app.use('/api/auth', authRoutes);
 

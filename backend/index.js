@@ -4,11 +4,12 @@ const mongoose = require('mongoose');
 const app = express();
 
 const newsRouter = require('./routes/News');
+const productRouter = require('./routes/Product');
 
 
 app.use(express.json()); 
 app.use('/news', newsRouter.router);
-
+app.use('/product', productRouter.router);
 
 
 const PORT = 8080;

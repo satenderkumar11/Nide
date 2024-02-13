@@ -9,8 +9,12 @@ const productRouter = require('./routes/Product');
 
 
 app.use(express.json()); 
-app.use('/news', newsRouter.router);
+// Middleware
+app.use(bodyParser.json());
+const authRoutes = require('./routes/AuthRoutes');
+app.use('/api/auth', authRoutes);
 
+app.use('/news', newsRouter.router);
 app.use('/product', productRouter.router);
 
 
@@ -30,7 +34,6 @@ const connectDB = async () => {
 };
 
 connectDB();
-
 app.get('/', (req, res)=>{
 	res.send('Server');
 })

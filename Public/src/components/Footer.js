@@ -23,7 +23,7 @@ const Footer = () => {
         </ul>
         <ul className='p-5 text-neutral-500 text-sm' >
         <li className='text-neutral-50 text-base font-semibold'>Office Address</li>
-          <li>IDE INDIA PVT LTD</li>
+          <li>NIDE INDIA PVT LTD</li>
           <li>46/4, Novel Tech Park,</li>
           <li>Hosur Rd, Kudlu Gate, Garvebhavi Palya,</li>
           <li>Bengaluru, Karnataka 560068</li>

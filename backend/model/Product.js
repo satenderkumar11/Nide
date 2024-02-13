@@ -3,16 +3,14 @@ const {Schema} = mongoose;
 
 const productSchema = new Schema({
     
+    prodId: {type: Number, required : true, unique: true},
     prodTitle: {type: String, required: true, unique: true},
-    prodModel: {type: String, required: true, unique: true},
-    prodImg: [{
-        data: Buffer,
-        contentType: String,
-    }],
-    prodVideoURL: {type: String, required: true},
-    prodSpecs: {type: String},
-    prodCategory: {type: String, required: true},
-    
+    prodModelNumber: {type: String, required: true, unique: true},
+    prodVideoUrl: {type: String},
+    prodImg: {type: String},
+    prodSpec: {type: String}, 
+    prodCategory: {type: String, required: true}
+
 });
 
 exports.ProductModel = mongoose.model('Product', productSchema);

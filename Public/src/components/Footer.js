@@ -9,10 +9,10 @@ const Footer = () => {
       <div className = 'flex pt-3 w-4/5 mx-auto justify-between' >
         <ul className='p-5 text-neutral-500 text-sm'>
           <li className='text-neutral-50 text-base font-semibold'>Email</li>
-          <li>satenderkumar@gmail.com</li>
-          <li>utkarshtripathi@gmail.com</li>
-          <li>rohitkumar@gmail.com</li>
-          <li> manishhks@gmail.com</li>
+          <li>info@nideindia.com</li>
+          <li>email2nide@gmail.com</li>
+          <li>email3nide@gmail.com</li>
+          <li>email4nide@gmail.com</li>
         </ul>
         <ul className='p-5 text-neutral-500 text-sm'>
           <li className='text-neutral-50 text-base font-semibold'>Phone</li>
@@ -22,10 +22,11 @@ const Footer = () => {
           <li>+91 8374932874</li>
         </ul>
         <ul className='p-5 text-neutral-500 text-sm' >
-        <li className='text-neutral-50 text-base font-semibold'>Address</li>
-          <li>SDF No. E - 17 & C - 2, Noida SEZ, Noida Dadri Road, Phase II</li>
-          <li>Noida - 201 305</li>
-          <li>Uttar Pradesh, India</li>
+        <li className='text-neutral-50 text-base font-semibold'>Office Address</li>
+          <li>IDE INDIA PVT LTD</li>
+          <li>46/4, Novel Tech Park,</li>
+          <li>Hosur Rd, Kudlu Gate, Garvebhavi Palya,</li>
+          <li>Bengaluru, Karnataka 560068</li>
         </ul>
         <ul className='p-5 text-sm text-neutral-500' >
           <li>Home</li>
@@ -43,6 +44,7 @@ const Footer = () => {
         <li><FaTwitter /></li>
         <li><FaYoutube /></li>
       </ul>
+      <div className='text-center bg-white text-black flex items-center justify-center py-2 text-xs'>  Copyright 2007-2023 &copy; Ningbo Nide Mechanical Equipment Co., Ltd. </div>
     </div>
   )
 }

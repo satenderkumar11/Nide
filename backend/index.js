@@ -8,6 +8,7 @@ const app = express();
 const newsRouter = require('./routes/News');
 const productRouter = require('./routes/Product');
 const jobRouter = require('./routes/Job');
+const queryRouter = require('./routes/Queries');
 
 
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use('/api/auth', authRoutes);
 app.use('/news', newsRouter.router);
 app.use('/product', productRouter.router);
 app.use('/job', jobRouter.router);
+app.use('/query',queryRouter.router);
 
 app.use(cors());
 

@@ -8,5 +8,4 @@ const newsSchema = new Schema({
     date: {type : String, required: true}
 })
 
-
 exports.NewsModel = mongoose.model('News', newsSchema)

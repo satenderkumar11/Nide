@@ -3,6 +3,6 @@ const { fetchAllNews, fetchNewsById, createNews, deleteNewsById } = require("../
 
 const router = express.Router();
 
-router.get('/', fetchAllNews).get('/:id', fetchNewsById).post('/', createNews).delete(':/id', deleteNewsById);
+router.get('/', fetchAllNews).get('/:id', fetchNewsById).post('/', createNews).delete('/:id', deleteNewsById);
 
 exports.router = router;

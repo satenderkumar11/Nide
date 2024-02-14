@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors'); 
+const methodOverride = require('method-override'); 
 const app = express();
 
 const newsRouter = require('./routes/News');
@@ -10,6 +11,7 @@ const jobRouter = require('./routes/Job');
 
 
 app.use(express.json()); 
+app.use(methodOverride());
 // Middleware
 const authRoutes = require('./routes/AuthRoutes');
 app.use('/api/auth', authRoutes);
@@ -31,8 +33,9 @@ const connectDB = async () => {
 	} catch (error) {
 		console.log(`error in mongodb ${error}`)
 	}
-};
+}; 
 
+ 
 connectDB();
 app.get('/', (req, res)=>{
 	res.send('Server');

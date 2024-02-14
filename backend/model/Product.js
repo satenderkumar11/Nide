@@ -8,9 +8,9 @@ const productSchema = new Schema({
     prodModelNumber: {type: String, required: true, unique: true},
     prodVideoUrl: {type: String},
     prodImg: {type: String},
-    prodSpec: {type: String}, 
+    prodSpec: {type: String, required: true}, 
     prodCategory: {type: String, required: true}
 
 });
-
+  
 exports.ProductModel = mongoose.model('Product', productSchema);

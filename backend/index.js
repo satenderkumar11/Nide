@@ -13,7 +13,6 @@ app.use(express.json());
 // Middleware
 const authRoutes = require('./routes/AuthRoutes');
 app.use('/api/auth', authRoutes);
-
 app.use('/news', newsRouter.router);
 app.use('/product', productRouter.router);
 app.use('/job', jobRouter.router);

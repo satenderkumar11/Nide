@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors'); 
-const methodOverride = require('method-override'); 
+const methodOverride = require('method-override');
 const app = express();
 
 const newsRouter = require('./routes/News');
@@ -10,8 +10,9 @@ const productRouter = require('./routes/Product');
 const jobRouter = require('./routes/Job');
 
 
-app.use(express.json()); 
-app.use(methodOverride());
+app.use(express.json());
+app.use(express.urlencoded({extended : true})); 
+app.use(methodOverride('_method'));
 // Middleware
 const authRoutes = require('./routes/AuthRoutes');
 app.use('/api/auth', authRoutes);

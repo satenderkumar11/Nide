@@ -1,8 +1,8 @@
 const express = require('express');
-const { createJob, fetchAllJobs } = require('../controller/Job');
+const { createJob, fetchAllJobs, updateJobbyId } = require('../controller/Job');
 
 const router = express.Router();
 
-router.post('/', createJob).get('/', fetchAllJobs);
+router.post('/', createJob).get('/', fetchAllJobs).patch('/:id', updateJobbyId);
 
 exports.router = router;

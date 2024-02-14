@@ -37,6 +37,25 @@ exports.createNews = async(req, res) => {
 
 }
 
+exports.updateNewsbyId = async (req, res) => {
+
+  const {id} = req.params;
+  const details = req.body;
+  try {
+    
+    const docs = await NewsModel.findByIdAndUpdate(id, details, { new: true });
+    if (!docs) {
+      return res.status(404).json({ message: 'News Item not found' });
+    }
+
+    res.status(201).json(docs);
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+
+}
+
 exports.deleteNewsById = async(req, res) => {
 
   const { id } = req.params;

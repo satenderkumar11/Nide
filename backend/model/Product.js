@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
-const {Schema} = mongoose;
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 const productSchema = new Schema({
+<<<<<<< Updated upstream
     
     
     title: {type: String, required: true},
@@ -15,3 +16,15 @@ const productSchema = new Schema({
 }, {timestamps: true});
   
 exports.ProductModel = mongoose.model('Product', productSchema);
+=======
+  prodId: { type: Number, required: true, unique: true },
+  prodTitle: { type: String, required: true, unique: true },
+  prodModelNumber: { type: String, required: true, unique: true },
+  prodVideoUrl: { type: String },
+  prodImg: { type: String },
+  prodSpec: { type: String, required: true },
+  prodCategory: { type: String, required: true },
+});
+
+exports.ProductModel = mongoose.model("Product", productSchema);
+>>>>>>> Stashed changes

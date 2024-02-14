@@ -14,8 +14,12 @@ const userSchema = new mongoose.Schema({
     ],
     jobsApplied: [
         {type: mongoose.Schema.Types.ObjectId, ref: 'Job'}
+    ],
+    whitepaper: [
+        {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
     ]
-});
+    
+}, {timestamps: true});
 
 // userSchema.pre('save', async function (next) {
 //     const user = this;

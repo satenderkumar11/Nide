@@ -6,11 +6,11 @@ const jobSchema = new Schema({
 
     //jobId: {type: String, default: () => uuidv4()},
     title: {type: String, required: true, unique: true},
-    description: {type: String},
+    description: {type: String, required: true},
     date: {type: String, required: true},
-    requirements: {type: String},
-    location: {type: String},
-    employmentType: {type: String} //intern or FTE
+    requirements: {type: String, required: true},
+    location: {type: String, required: true},
+    employmentType: {type: String, required: true} //intern or FTE
 
 });
 

@@ -34,19 +34,19 @@ const AboutUs = () => {
         <h4 className='font-bold text-xl my-4 text-center uppercase'>Core values</h4>
         <div className='grid grid-cols-3 text-neutral-50 gap-3'>
           <div className='bg-gradient-to-b from-blue-950 to-blue-800 rounded-lg flex flex-col items-center p-4'>
-            <span className='text-4xl'><TbTargetArrow /></span>
+            <span className='text-4xl '><TbTargetArrow /></span>
             <h6 className='font-semibold'>MISSION</h6>
-            <p className='text-sm text-neutral-200 mt-2'>Transmit value, Realize dream, Take responsibility</p>
+            <p className='text-sm text-blue-200 mt-2'>Transmit value, Realize dream, Take responsibility</p>
           </div>
           <div className='bg-gradient-to-b from-blue-950 to-blue-800 rounded-lg flex flex-col items-center p-4'>
             <span className='text-4xl'><FaEye /></span>
             <h6 className='font-semibold'>VISION</h6>
-            <p className='text-sm text-neutral-200 mt-2'>Provide customer with optimized solution to motor manufacturing</p>
+            <p className='text-sm text-blue-200 mt-2'>Provide customer with optimized solution to motor manufacturing</p>
           </div>
           <div className='bg-gradient-to-b from-blue-950 to-blue-800 rounded-lg flex flex-col items-center p-4'>
             <span className='text-4xl'><FaRegLightbulb /></span>
             <h6 className='font-semibold'>PHILOSOPHY</h6>
-            <p className='text-sm text-neutral-200 mt-2'>
+            <p className='text-sm text-200 mt-2'>
               Serving, Professional, Prompt, Innovative
             </p>
           </div>

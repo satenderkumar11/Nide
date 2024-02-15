@@ -3,11 +3,17 @@ import {useFormik} from 'formik'
 import {useNavigate} from 'react-router-dom'
 import {googleSignIn, logOut} from '../utils/authHelper'
 import {FcGoogle} from 'react-icons/fc'
+import {
+  IoIosArrowDropleftCircle,
+  IoIosArrowDroprightCircle,
+} from "react-icons/io";
+import Register from './Register'
 
 
 const Login = () => {
   // const {setUser} = useContext(UserContext);
   const [signInError, setSignInError] = useState(null);
+  const [loggingIn, setLoggingIn] = useState(true);
   const navigate = useNavigate();
 
   const handleGoogleSignIn = async () => {
@@ -58,76 +64,95 @@ const Login = () => {
   });
 
   return (
-    <div className="grow flex flex-col-reverse justify-center sm:flex-row">
-      <form
-        className="flex flex-col justify-center px-6 sm:grow lg:w-1/3 lg:grow-0 xl:w-1/4"
-        onSubmit={formik.handleSubmit}
-      >
-        <h3 className="text-4xl my-8 text-slate-800">Login</h3>
-
-        <div className="flex flex-col mb-2">
-          <label htmlFor="email" className="font-medium text-slate-800">
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            onBlur={formik.handleBlur}
-            className="shadow-md rounded-sm focus:outline-none p-1 text-slate-700"
-          />
-          {formik.touched.email && formik.errors.email ? (
-            <div className="text-xs font-medium text-red-500">
-              {formik.errors.email}
-            </div>
-          ) : null}
-        </div>
-
-        <div className="flex flex-col mb-2">
-          <label htmlFor="password" className="font-medium text-slate-800">
-            Password
-          </label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            onBlur={formik.handleBlur}
-            className="shadow-md rounded-sm focus:outline-none p-1 text-slate-700"
-          />
-          {formik.touched.password && formik.errors.password ? (
-            <div className="text-xs font-medium text-red-500">
-              {formik.errors.password}
-            </div>
-          ) : null}
-        </div>
-
-        {signInError && (
-          <div className="text-xs font-medium text-red-500">
-            {signInError}
-          </div>
-        )}
-
-        <button
-          className="shadow-md rounded-full my-4 py-2 font-medium text-slate-800 hover:text-cyan-500"
-          type="submit"
+    <div
+      className={`w-1/2 mx-auto flex my-4 ${!loggingIn ? "flex-row-reverse" : ""}`}
+    >
+      <div className="w-1/2 bg-neutral-100 bg-gradient-to-tr from-neutral-700 to-neutral-900 rounded-lg shadow-xl flex flex-col gap-2 items-center justify-center">
+        <h3 className="text-neutral-600 text-xl font-semibold ">
+          {loggingIn ? "Register" : "Login"}
+        </h3>
+        <span
+          className="text-4xl cursor-pointer"
+          onClick={() => setLoggingIn((prevState) => !prevState)}
         >
-          Login
-        </button>
+          {loggingIn ? (
+            <IoIosArrowDropleftCircle />
+          ) : (
+            <IoIosArrowDroprightCircle />
+          )}
+        </span>
+      </div>
 
-        <div className="text-center">
+      {loggingIn ? (
+        <form className="w-1/2 p-6 shadow-xl" onSubmit={formik.handleSubmit}>
+          <h3 className="text-4xl my-8 text-slate-800">Login</h3>
+
+          <div className="flex flex-col mb-2">
+            <label htmlFor="email" className="font-medium text-slate-800">
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+              onBlur={formik.handleBlur}
+              className="shadow-md rounded-sm focus:outline-none p-1 text-slate-700"
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <div className="text-xs font-medium text-red-500">
+                {formik.errors.email}
+              </div>
+            ) : null}
+          </div>
+
+          <div className="flex flex-col mb-2">
+            <label htmlFor="password" className="font-medium text-slate-800">
+              Password
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+              onBlur={formik.handleBlur}
+              className="shadow-md rounded-sm focus:outline-none p-1 text-slate-700"
+            />
+            {formik.touched.password && formik.errors.password ? (
+              <div className="text-xs font-medium text-red-500">
+                {formik.errors.password}
+              </div>
+            ) : null}
+          </div>
+
+          {signInError && (
+            <div className="text-xs font-medium text-red-500">
+              {signInError}
+            </div>
+          )}
+
           <button
-            type="button"
-            className="w-fit shadow-md rounded-full text-xl p-2"
-            onClick={handleGoogleSignIn}
+            className="w-full shadow-md rounded-full my-4 py-2 font-medium text-slate-800 hover:text-blue-600"
+            type="submit"
           >
-            <FcGoogle />
+            Login
           </button>
-        </div>
-      </form>
+
+          <div className="text-center">
+            <button
+              type="button"
+              className="w-fit shadow-md rounded-full text-xl p-2"
+              onClick={handleGoogleSignIn}
+            >
+              <FcGoogle />
+            </button>
+          </div>
+        </form>
+      ) : (
+        <Register />
+      )}
     </div>
   );
 };

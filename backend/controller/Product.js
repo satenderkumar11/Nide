@@ -25,14 +25,15 @@ exports.updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
     const updatingFields = req.body;
-    const existingProduct = await ProductModel.findByIdAndUpdate(id, updatingFields, {new: true});
+    const docs = await ProductModel.findByIdAndUpdate(id, updatingFields, {new: true});
 
-    if (!existingProduct) {
+    if (!docs) {
       return res.status(404).send({ error: "Product Not Found" });
     }
 
-    res.status(200).json(updatedProduct);
+    res.status(200).json(docs);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 };

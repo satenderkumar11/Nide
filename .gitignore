@@ -1,4 +1,4 @@
-public/node_modules
-public/dist 
-public/.parcel-cache
+Public/node_modules
+Public/dist 
+Public/.parcel-cache
 .DS_store

@@ -18,9 +18,9 @@ app.use(methodOverride('_method'));
 const authRoutes = require('./routes/AuthRoutes');
 app.use('/api/auth', authRoutes);
 app.use('/news', newsRouter.router);
-app.use('/product', productRouter.router);
+app.use('/products', productRouter.router);
 app.use('/careers', jobRouter.router);
-app.use('/query',queryRouter.router);
+app.use('/queries',queryRouter.router);
 
 app.use(cors());
 

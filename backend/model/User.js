@@ -10,10 +10,10 @@ const bcrypt = require("bcryptjs");
 //     passwordHash: {type: String, required: true },
 //     role: {type: String, required: true}, // Need clarification
 //     wishlist: [
-//         {type: mongoose.Schema.Types.ObjectId, ref: 'Product'}
+//         {type: mongoose.Schema.Types.ObjectId, ref: 'ProductModel'}
 //     ],
 //     jobsApplied: [
-//         {type: mongoose.Schema.Types.ObjectId, ref: 'Job'}
+//         {type: mongoose.Schema.Types.ObjectId, ref: 'JobModel'}
 //     ]
 // });
 

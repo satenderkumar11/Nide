@@ -14,6 +14,7 @@ const queryRouter = require('./routes/Queries');
 app.use(express.json());
 app.use(express.urlencoded({extended : true})); 
 app.use(methodOverride('_method'));
+app.use(cors());
 // Middleware
 const authRoutes = require('./routes/AuthRoutes');
 app.use('/api/auth', authRoutes);
@@ -22,7 +23,7 @@ app.use('/products', productRouter.router);
 app.use('/careers', jobRouter.router);
 app.use('/queries',queryRouter.router);
 
-app.use(cors());
+
 
 
 const PORT = 8080;

@@ -23,11 +23,15 @@ exports.register = async (req, res) => {
     const docs = await newUser.save();
     console.log(docs);
 
-    // const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
-    // res.cookie("token", token, {
-    //   httpOnly: true,
-    //   expires: new Date(Date.now() + 60 * 1000),
-    // });
+    const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET);
+    res.cookie("token", token, {
+      httpOnly: true,
+      expires: new Date(Date.now() + 60 * 1000),
+      domain: "localhost",
+      path: "/",
+      httpOnly: true,
+      secure: true,
+    });
     res.status(201).json(docs);
 
     // write the code for redirect below
@@ -52,6 +56,10 @@ exports.login = async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       expires: new Date(Date.now() + 60 * 1000),
+      domain: "localhost",
+      path: "/",
+      httpOnly: true,
+      secure: true,
     });
     res.json({ message: "Login successful", token });
 
@@ -61,10 +69,26 @@ exports.login = async (req, res) => {
   }
 };
 exports.logout = (req, res) => {
-  res.cookie("token", null, {
-    httpOnly: true,
-    expires: new Date(Date.now()),
-  });
-  res.json({ message: "Logout successful" });
+  try {
+    // res.cookie("token", null, {
+    //   httpOnly: true,
+    //   expires: new Date(Date.now()),
+    //   domain: "localhost",
+    //   path: "/",
+    //   httpOnly: true,
+    //   secure: true,
+    // });
+    res.clearCookie("token", {
+      domain: "localhost", // Replace with your domain
+      path: "/", // Specify the path of the cookie
+      httpOnly: true, // Ensure httpOnly is set to true
+      secure: true, // Set to true if served over HTTPS
+    });
+
+    // res.clearCookie("token");
+    res.json({ message: "Logout successful" });
+  } catch (err) {
+    res.status(400).json({ message: "logout failed" });
+  }
   // write the code for redirect below
 };

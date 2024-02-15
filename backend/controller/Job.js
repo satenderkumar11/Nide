@@ -25,9 +25,9 @@ exports.fetchAllJobs = async (req, res) => {
 exports.fetchJobById = async (req, res) => {
 
   const { id } = req.params;
-    console.log(id);
+    
   try {
-    const docs = await JobModel.findOne({ jobId: id });
+    const docs = await JobModel.findById(id);
     console.log(docs);
     res.status(200).json(docs);
   } catch (err) {
@@ -40,9 +40,9 @@ exports.updateJobbyId = async (req, res) => {
   const updates = req.body;
 
   try {
-    const docs = await JobModel.findOneAndUpdate(
-      { jobId: id },
-      { $set: updates },
+    const docs = await JobModel.findByIdAndUpdate(
+      id,
+      updates,
       { new: true }
     );
     res.status(200).json(docs);

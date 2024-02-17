@@ -46,7 +46,7 @@ const AboutUs = () => {
           <div className='bg-gradient-to-b from-blue-950 to-blue-800 rounded-lg flex flex-col items-center p-4'>
             <span className='text-4xl'><FaRegLightbulb /></span>
             <h6 className='font-semibold'>PHILOSOPHY</h6>
-            <p className='text-sm text-200 mt-2'>
+            <p className='text-sm text-blue-200 mt-2'>
               Serving, Professional, Prompt, Innovative
             </p>
           </div>

@@ -90,5 +90,5 @@ exports.logout = (req, res) => {
   } catch (err) {
     res.status(400).json({ message: "logout failed" });
   }
-  // write the code for redirect below
+  
 };

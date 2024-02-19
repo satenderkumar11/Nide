@@ -7,7 +7,7 @@ const whitepaperSchema = new Schema({
     description: {type: String, required: true},
     date: {type: String, required: true},
     authors: {type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'},
-    tags: {type: mongoose.Schema.Types.Mixed}
+    tags: {type: String}
 
 }, {timestamps: true});
   

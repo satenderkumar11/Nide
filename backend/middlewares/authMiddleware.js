@@ -16,6 +16,5 @@ const authMiddleware = async (req, res, next) => {
   }
 };
 
-// Use the middleware in your routes
-// app.use(authMiddleware);
+
 module.exports = authMiddleware;

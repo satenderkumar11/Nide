@@ -15,10 +15,7 @@ exports.register = async (req, res) => {
     }
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-    // const newUser = await UserModel.create({
-    //   email,
-    //   hashedPassword
-    // })
+
     const newUser = new UserModel({ email: email, password: hashedPassword });
     const docs = await newUser.save();
     // console.log(docs);
@@ -43,7 +40,9 @@ exports.login = async (req, res) => {
     if (!(email && password)) {
       res.status(400).send("email or password not sent");
     }
-
+    var now = new Date();
+    // convert date to a string in UTC timezone format:
+    console.log(now.toUTCString());
     const existingUser = await UserModel.findOne({ email });
     if (
       existingUser &&
@@ -58,7 +57,7 @@ exports.login = async (req, res) => {
       );
 
       const options = {
-        expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 60 * 1000),
+        expires: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000),
         httpOnly: true,
       };
       res.status(200).cookie("token", token, options).json({

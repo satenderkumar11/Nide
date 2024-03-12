@@ -26,7 +26,7 @@ app.use('/news', newsRouter.router);
 app.use('/auth', authRoutes.router);
 app.use('/products', productRouter.router);
 app.use('/careers', jobRouter.router);
-app.use('/queries', queryRouter.router);
+app.use('/queries',queryRouter.router);
 
 
 

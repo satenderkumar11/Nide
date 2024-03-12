@@ -1,6 +1,6 @@
 const express = require("express");
 const { createQuery, fetchAllQuery, updateQueryById, deleteQuery } = require("../controller/Queries");
-const authMiddleware = require("../middlewares/authMiddleware.js")
+const authMiddleware = require("../middlewares/authMiddlewareUser.js")
 
 const router = express.Router();
 

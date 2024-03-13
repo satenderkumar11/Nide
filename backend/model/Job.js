@@ -4,7 +4,6 @@ const {Schema} = mongoose;
 
 const jobSchema = new Schema({
 
-    //jobId: {type: String, default: () => uuidv4()},
     title: {type: String, required: true, unique: true},
     description: {type: String, required: true},
     date: {type: String, required: true},
